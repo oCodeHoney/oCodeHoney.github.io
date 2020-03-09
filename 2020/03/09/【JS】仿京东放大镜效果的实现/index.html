@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>oCodeHoney</title>
+    <title>【JS】仿京东放大镜效果的实现 · oCodeHoney</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >oCodeHoney&#39;s BLOG</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">【JS】仿京东放大镜效果的实现</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>oCodeHoney's BLOG</a>
 </header>
@@ -220,24 +231,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            【JS】仿京东放大镜效果的实现
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">554</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/03/09</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,107 +393,160 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/09/%E3%80%90JS%E3%80%91%E4%BB%BF%E4%BA%AC%E4%B8%9C%E6%94%BE%E5%A4%A7%E9%95%9C%E6%95%88%E6%9E%9C%E7%9A%84%E5%AE%9E%E7%8E%B0/" >
-            
-                <span>【JS】仿京东放大镜效果的实现</span>
-        </a>
-        <div class="abstract-content">
-            这是JS学习到目前为止做的比较难的一个案例，主要的难点在于鼠标的偏移量与放大镜遮罩层的偏移量以及放大图的偏移量的换算。
-##效果展示
-
-##参考代码
-###html代码
-&lt;!DOCTYPE html&gt;
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>这是JS学习到目前为止做的比较难的一个案例，主要的难点在于鼠标的偏移量与放大镜遮罩层的偏移量以及放大图的偏移量的换算。</p>
+<p>##效果展示</p>
+<p><img src="images/fangdajing.jpg" alt="放大镜效果图"></p>
+<p>##参考代码</p>
+<p>###html代码</p>
+<pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/09</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .box {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 1px solid #ddd;
+            margin: 20px 0 0 20px;
+        }
+
+        .bright {
+            width: 100%;
+        }
+
+        .mask {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: #b9e4f5;
+            border: 1px solid #ccc;
+            /* 透明度 */
+            opacity: .5;
+            cursor: move;
+        }
+
+        .big {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 410px;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            /* z-index: 999; */
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        .big img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    &lt;/style&gt;
+    &lt;script src=&quot;js/detail.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;box&quot;&gt;
+        &lt;img src=&quot;../images/bright.jpg&quot; alt=&quot;&quot; class=&quot;bright&quot;&gt;
+        &lt;div class=&quot;mask&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;big&quot;&gt;
+            &lt;img src=&quot;../images/bright.jpg&quot; alt=&quot;&quot; class=&quot;bigImg&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre><p>###JS代码</p>
+<pre><code>window.addEventListener(&apos;load&apos;, function() {
+    var box = document.querySelector(&apos;.box&apos;);
+    var mask = document.querySelector(&apos;.mask&apos;);
+    var big = document.querySelector(&apos;.big&apos;);
+    // 1.鼠标经过 box 时，显示 mask 和 big ，离开时隐藏
+    box.addEventListener(&apos;mouseover&apos;, function() {
+        mask.style.display = &apos;block&apos;;
+        big.style.display = &apos;block&apos;;
+    })
+    box.addEventListener(&apos;mouseout&apos;, function() {
+            mask.style.display = &apos;none&apos;;
+            big.style.display = &apos;none&apos;;
+        })
+        // 2.鼠标移动时，让黄色盒子 mask 跟着鼠标走
+        // maskX 和 maskY 其实就是mask盒子的位移值
+    box.addEventListener(&apos;mousemove&apos;, function(e) {
+        var x = e.pageX - this.offsetLeft;
+        var y = e.pageY - this.offsetTop;
+        var maskX = x - mask.offsetWidth / 2;
+        var maskY = y - mask.offsetHeight / 2;
+        var maskMaxWidth = box.offsetWidth - mask.offsetWidth;
+        var maskMaxHeight = box.offsetHeight - mask.offsetHeight;
+        if (maskX &lt;= 0) {
+            maskX = 0;
+        } else if (maskX &gt;= maskMaxWidth) {
+            maskX = maskMaxWidth;
+        }
+        if (maskY &lt;= 0) {
+            maskY = 0;
+        } else if (maskY &gt;= maskMaxHeight) {
+            maskY = maskMaxHeight;
+        }
+        mask.style.left = maskX + &apos;px&apos;;
+        mask.style.top = maskY + &apos;px&apos;;
+
+        // 3.大图 big 的移动距离 = mask 的移动距离 * big 的最大移动距离 / mask 的最大移动距离
+        var bigImg = document.querySelector(&apos;.bigImg&apos;);
+        var bigMaxWidth = bigImg.offsetWidth - big.offsetWidth;
+        var bigMaxHeight = bigImg.offsetHeight - big.offsetHeight;
+        var bigX = maskX * bigMaxWidth / maskMaxWidth;
+        var bigY = maskY * bigMaxHeight / maskMaxHeight;
+        bigImg.style.left = -bigX + &apos;px&apos;;
+        bigImg.style.top = -bigY + &apos;px&apos;;
+    })    
+})</code></pre>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/09/%E3%80%90BLOG%E3%80%91%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" >
-            
-                <span>【BLOG】BLOG的部署与搭建</span>
-        </a>
-        <div class="abstract-content">
-            今天完成了个人博客 oCodeHoney 的搭建，使用的是github托管和hexo框架，之前折腾了很久用云服务器和html+css自己写，但是知识储备不够，所以一直没有成型。今天也折腾了半个下午才算是正式部署完毕，中间也经历了一些波折，这里记录一下详细的教程。
-参考：
-github+hexo搭建个人博客
-Hexo系列(一) 搭建博客网站
-
-教程
-注册github账号
-下载git
-下载node.js（以上三步直接官网下载，比较简单不做赘述）
-
-HEXO安装在桌面上单击右键–&gt;Git Bash Here,输入命令
-npm install -g hexo
-安装完成后 可输入 hexo ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/09</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/09/hello-world/" >
-            
-                <span>Hello Honey</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-
-More info: Writing
-Run server1$ hexo server
-
-Mo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/09</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/03/09/%E3%80%90BLOG%E3%80%91%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title= "【BLOG】BLOG的部署与搭建">
+                    <div class="prevTitle">【BLOG】BLOG的部署与搭建</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -520,6 +628,24 @@ Mo...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -668,6 +794,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
