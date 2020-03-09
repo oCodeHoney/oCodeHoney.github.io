@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">512</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">525</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -397,118 +397,11 @@ height:50vh;
     <article class="article-entry">
         <p>这是JS学习到目前为止做的比较难的一个案例，主要的难点在于鼠标的偏移量与放大镜遮罩层的偏移量以及放大图的偏移量的换算。</p>
 <h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="/2020/03/09/%E3%80%90JS%E3%80%91%E4%BB%BF%E4%BA%AC%E4%B8%9C%E6%94%BE%E5%A4%A7%E9%95%9C%E6%95%88%E6%9E%9C%E7%9A%84%E5%AE%9E%E7%8E%B0/fangdajing.jpg" alt="放大镜效果图"></p>
-<h2 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h2><h3 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h3><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+<h2 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h2><h3 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.box</span> &#123;</span></span><br><span class="line">            position: relative;</span><br><span class="line">            width: 400px;</span><br><span class="line">            height: 400px;</span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#ddd</span>;</span></span><br><span class="line">            margin: 20px 0 0 20px;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line"><span class="css">        <span class="selector-class">.bright</span> &#123;</span></span><br><span class="line">            width: 100%;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line"><span class="css">        <span class="selector-class">.mask</span> &#123;</span></span><br><span class="line">            display: none;</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 300px;</span><br><span class="line"><span class="css">            <span class="selector-tag">background</span>: <span class="selector-id">#b9e4f5</span>;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#ccc</span>;</span></span><br><span class="line"><span class="css">            <span class="comment">/* 透明度 */</span></span></span><br><span class="line"><span class="css">            <span class="selector-tag">opacity</span>: <span class="selector-class">.5</span>;</span></span><br><span class="line">            cursor: move;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line"><span class="css">        <span class="selector-class">.big</span> &#123;</span></span><br><span class="line">            display: none;</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0;</span><br><span class="line">            left: 410px;</span><br><span class="line">            width: 500px;</span><br><span class="line">            height: 500px;</span><br><span class="line">            background-color: pink;</span><br><span class="line"><span class="css">            <span class="comment">/* z-index: 999; */</span></span></span><br><span class="line"><span class="css">            <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#ccc</span>;</span></span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line"><span class="css">        <span class="selector-class">.big</span> <span class="selector-tag">img</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0;</span><br><span class="line">            left: 0;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/detail.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../images/bright.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">"bright"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"big"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../images/bright.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">"bigImg"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;style&gt;
-        .box {
-            position: relative;
-            width: 400px;
-            height: 400px;
-            border: 1px solid #ddd;
-            margin: 20px 0 0 20px;
-        }
 
-        .bright {
-            width: 100%;
-        }
 
-        .mask {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 300px;
-            height: 300px;
-            background: #b9e4f5;
-            border: 1px solid #ccc;
-            /* 透明度 */
-            opacity: .5;
-            cursor: move;
-        }
-
-        .big {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 410px;
-            width: 500px;
-            height: 500px;
-            background-color: pink;
-            /* z-index: 999; */
-            border: 1px solid #ccc;
-            overflow: hidden;
-        }
-
-        .big img {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-    &lt;/style&gt;
-    &lt;script src=&quot;js/detail.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;div class=&quot;box&quot;&gt;
-        &lt;img src=&quot;../images/bright.jpg&quot; alt=&quot;&quot; class=&quot;bright&quot;&gt;
-        &lt;div class=&quot;mask&quot;&gt;&lt;/div&gt;
-        &lt;div class=&quot;big&quot;&gt;
-            &lt;img src=&quot;../images/bright.jpg&quot; alt=&quot;&quot; class=&quot;bigImg&quot;&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;</code></pre><h3 id="JS代码"><a href="#JS代码" class="headerlink" title="JS代码"></a>JS代码</h3><pre>
-<code class="javascript">
-window.addEventListener('load', function() {
-    var box = document.querySelector('.box');
-    var mask = document.querySelector('.mask');
-    var big = document.querySelector('.big');
-    // 1.鼠标经过 box 时，显示 mask 和 big ，离开时隐藏
-    box.addEventListener('mouseover', function() {
-        mask.style.display = 'block';
-        big.style.display = 'block';
-    })
-    box.addEventListener('mouseout', function() {
-            mask.style.display = 'none';
-            big.style.display = 'none';
-        })
-        // 2.鼠标移动时，让黄色盒子 mask 跟着鼠标走
-        // maskX 和 maskY 其实就是mask盒子的位移值
-    box.addEventListener('mousemove', function(e) {
-        var x = e.pageX - this.offsetLeft;
-        var y = e.pageY - this.offsetTop;
-        var maskX = x - mask.offsetWidth / 2;
-        var maskY = y - mask.offsetHeight / 2;
-        var maskMaxWidth = box.offsetWidth - mask.offsetWidth;
-        var maskMaxHeight = box.offsetHeight - mask.offsetHeight;
-        if (maskX <= 0) { maskx="0;" } else if (maskx>= maskMaxWidth) {
-            maskX = maskMaxWidth;
-        }
-        if (maskY <= 0) { masky="0;" } else if (masky>= maskMaxHeight) {
-            maskY = maskMaxHeight;
-        }
-        mask.style.left = maskX + 'px';
-        mask.style.top = maskY + 'px';
-
-        // 3.大图 big 的移动距离 = mask 的移动距离 * big 的最大移动距离 / mask 的最大移动距离
-        var bigImg = document.querySelector('.bigImg');
-        var bigMaxWidth = bigImg.offsetWidth - big.offsetWidth;
-        var bigMaxHeight = bigImg.offsetHeight - big.offsetHeight;
-        var bigX = maskX * bigMaxWidth / maskMaxWidth;
-        var bigY = maskY * bigMaxHeight / maskMaxHeight;
-        bigImg.style.left = -bigX + 'px';
-        bigImg.style.top = -bigY + 'px';
-    })
-
-})
-</=></=></code>
-</pre>
+<h3 id="JS代码"><a href="#JS代码" class="headerlink" title="JS代码"></a>JS代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>);</span><br><span class="line">    <span class="keyword">var</span> mask = <span class="built_in">document</span>.querySelector(<span class="string">'.mask'</span>);</span><br><span class="line">    <span class="keyword">var</span> big = <span class="built_in">document</span>.querySelector(<span class="string">'.big'</span>);</span><br><span class="line">    <span class="comment">// 1.鼠标经过 box 时，显示 mask 和 big ，离开时隐藏</span></span><br><span class="line">    box.addEventListener(<span class="string">'mouseover'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        mask.style.display = <span class="string">'block'</span>;</span><br><span class="line">        big.style.display = <span class="string">'block'</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">    box.addEventListener(<span class="string">'mouseout'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            mask.style.display = <span class="string">'none'</span>;</span><br><span class="line">            big.style.display = <span class="string">'none'</span>;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="comment">// 2.鼠标移动时，让黄色盒子 mask 跟着鼠标走</span></span><br><span class="line">        <span class="comment">// maskX 和 maskY 其实就是mask盒子的位移值</span></span><br><span class="line">    box.addEventListener(<span class="string">'mousemove'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> x = e.pageX - <span class="keyword">this</span>.offsetLeft;</span><br><span class="line">        <span class="keyword">var</span> y = e.pageY - <span class="keyword">this</span>.offsetTop;</span><br><span class="line">        <span class="keyword">var</span> maskX = x - mask.offsetWidth / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">var</span> maskY = y - mask.offsetHeight / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">var</span> maskMaxWidth = box.offsetWidth - mask.offsetWidth;</span><br><span class="line">        <span class="keyword">var</span> maskMaxHeight = box.offsetHeight - mask.offsetHeight;</span><br><span class="line">        <span class="keyword">if</span> (maskX &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            maskX = <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (maskX &gt;= maskMaxWidth) &#123;</span><br><span class="line">            maskX = maskMaxWidth;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (maskY &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            maskY = <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (maskY &gt;= maskMaxHeight) &#123;</span><br><span class="line">            maskY = maskMaxHeight;</span><br><span class="line">        &#125;</span><br><span class="line">        mask.style.left = maskX + <span class="string">'px'</span>;</span><br><span class="line">        mask.style.top = maskY + <span class="string">'px'</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3.大图 big 的移动距离 = mask 的移动距离 * big 的最大移动距离 / mask 的最大移动距离</span></span><br><span class="line">        <span class="keyword">var</span> bigImg = <span class="built_in">document</span>.querySelector(<span class="string">'.bigImg'</span>);</span><br><span class="line">        <span class="keyword">var</span> bigMaxWidth = bigImg.offsetWidth - big.offsetWidth;</span><br><span class="line">        <span class="keyword">var</span> bigMaxHeight = bigImg.offsetHeight - big.offsetHeight;</span><br><span class="line">        <span class="keyword">var</span> bigX = maskX * bigMaxWidth / maskMaxWidth;</span><br><span class="line">        <span class="keyword">var</span> bigY = maskY * bigMaxHeight / maskMaxHeight;</span><br><span class="line">        bigImg.style.left = -bigX + <span class="string">'px'</span>;</span><br><span class="line">        bigImg.style.top = -bigY + <span class="string">'px'</span>;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
