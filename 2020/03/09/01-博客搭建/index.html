@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">749</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">752</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -395,21 +395,19 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>今天完成了个人博客 <strong><em>oCodeHoney</em></strong> 的搭建，使用的是github托管和hexo框架，之前折腾了很久用云服务器自己写，但是知识储备不够，所以一直没有成型。今天也折腾了半个下午才算是正式部署完毕，中间也经历了一些波折，这里记录一下详细的教程。</p>
-<p>##教程参考：</p>
-<ul>
+        <p>今天完成了个人博客 <strong><em>oCodeHoney</em></strong> 的搭建，使用的是github托管和hexo框架，之前折腾了很久用云服务器和html+css自己写，但是知识储备不够，所以一直没有成型。今天也折腾了半个下午才算是正式部署完毕，中间也经历了一些波折，这里记录一下详细的教程。</p>
+<h2 id="教程参考："><a href="#教程参考：" class="headerlink" title="教程参考："></a>教程参考：</h2><ul>
 <li><a href="https://www.bilibili.com/video/av23913382" target="_blank" rel="noopener">github+hexo搭建个人博客</a></li>
 <li><a href="https://www.cnblogs.com/wsmrzx/p/9439284.html" target="_blank" rel="noopener">Hexo系列(一) 搭建博客网站</a></li>
 </ul>
-<p>##教程</p>
-<ul>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><ul>
 <li>注册github账号</li>
 <li>下载git</li>
-<li>下载node.js（以上三步直接官网下载，比较简单不做赘述）<br>###HEXO安装<br>在桌面上单击右键–&gt;Git Bash Here,输入命令</li>
+<li>下载node.js（以上三步直接官网下载，比较简单不做赘述）<h3 id="HEXO安装"><a href="#HEXO安装" class="headerlink" title="HEXO安装"></a>HEXO安装</h3>在桌面上单击右键–&gt;Git Bash Here,输入命令</li>
 </ul>
 <p><code>npm install -g hexo</code></p>
 <p>安装完成后 可输入 <code>hexo -v</code> 查看版本并判断是否安装成功。</p>
-<p>###BLOG本地文件创建<br>在你想要存储的位置创建blog文件夹，即为根目录。</p>
+<h3 id="BLOG本地文件创建"><a href="#BLOG本地文件创建" class="headerlink" title="BLOG本地文件创建"></a>BLOG本地文件创建</h3><p>在你想要存储的位置创建blog文件夹，即为根目录。</p>
 <p>在根目录下右击–&gt;Git Bash Here,输入命令</p>
 <p><code>hexo init</code></p>
 <p>此时可以发现根目录下已经有了很多文件，即初始化完成，然后输入命令</p>
@@ -417,7 +415,7 @@ height:50vh;
 <p>完成后继续输入命令</p>
 <p><code>npm install hexo-deployer-git --save</code></p>
 <p>本地文件创建完成。</p>
-<p>###远端部署<br>首先在根目录右键打开git bash，输入命令(把your_email改为你自己的邮箱)</p>
+<h3 id="远端部署"><a href="#远端部署" class="headerlink" title="远端部署"></a>远端部署</h3><p>首先在根目录右键打开git bash，输入命令(把your_email改为你自己的邮箱)</p>
 <p><code>ssh-keygen -t rsa -C &quot;your_email&quot;</code></p>
 <p>按几下回车直到完成，按着提示的路径<code>/c/Users/user/.ssh/id_rsa.pub</code>找到<code>id_rsa.pub</code>文件，用记事本打开，复制里面所有代码。打开github–&gt;Settings(点击头像旁边的小三角，在下拉栏中选择Settings)–&gt;SSH and GPG keys–&gt;New SSH key–&gt;title随便写，key就把刚刚复制的代码粘贴进去–&gt;Add SSH key</p>
 <p>然后进入github–&gt;start a project,在Repository Name栏内写入 <code>username（你的github用户名）.github.io</code>,下面有一个with a README的选项可以勾选上,其余的不用改，点击<code>Create repository</code>。</p>
@@ -432,7 +430,7 @@ Run
   git config --global user.email &quot;you@example.com&quot;
   git config --global user.name &quot;Your Name&quot;</code></pre><p>按照提示依次输入如下命令(邮箱和名字改为自己的)</p>
 <pre><code>git config --global user.email &quot;you@example.com&quot;
-git config --global user.name &quot;Your Name&quot;`</code></pre><p>完成后再次输入命令<code>hexo g -d</code>，部署就成功了。</p>
+git config --global user.name &quot;Your Name&quot;</code></pre><p>完成后再次输入命令<code>hexo g -d</code>，部署就成功了。</p>
 <hr>
 <p>Author：<font color="red">oCodeHoney</font></p>
 <p>Date：<font color="red">2020-3-9</font></p>
@@ -570,7 +568,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#教程参考："><span class="toc-number">1.</span> <span class="toc-text">教程参考：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#教程"><span class="toc-number">2.</span> <span class="toc-text">教程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HEXO安装"><span class="toc-number">2.1.</span> <span class="toc-text">HEXO安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BLOG本地文件创建"><span class="toc-number">2.2.</span> <span class="toc-text">BLOG本地文件创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远端部署"><span class="toc-number">2.3.</span> <span class="toc-text">远端部署</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
