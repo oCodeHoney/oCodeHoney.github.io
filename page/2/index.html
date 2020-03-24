@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>【JS】仿京东放大镜效果的实现 · oCodeHoney</title>
+    <title>oCodeHoney</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,8 +77,6 @@
 
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
-    
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -218,23 +216,14 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
     
-        <body class="post-body">
+        <body class="home-body">
     
     
-<header class="header">
+<header class="header index-header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/" >oCodeHoney&#39;s BLOG</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">【JS】仿京东放大镜效果的实现</a>
-            </div>
-    </div>
     
     <a class="home-link" href=/>oCodeHoney's BLOG</a>
 </header>
@@ -253,17 +242,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 404页  -->
+    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            【JS】仿京东放大镜效果的实现
-            <!-- 404 -->
+            oCodeHoney's BLOG
+            <!-- 文章页  -->
             
         </h1>
         <!-- 副标题 -->
@@ -271,43 +260,12 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-            <!-- 404 -->
+                Beware beginnings.
+            
+            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">462</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/03/09</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -408,68 +366,132 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <p>这是JS学习到目前为止做的比较难的一个案例，主要的难点在于鼠标的偏移量与放大镜遮罩层的偏移量以及放大图的偏移量的换算。</p>
-<a id="more"></a>
-
-<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="/2020/03/09/%E3%80%90JS%E3%80%91%E4%BB%BF%E4%BA%AC%E4%B8%9C%E6%94%BE%E5%A4%A7%E9%95%9C%E6%95%88%E6%9E%9C%E7%9A%84%E5%AE%9E%E7%8E%B0/fangdajing.jpg" alt="放大镜效果图"></p>
-<h2 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h2><h3 id="HTML代码"><a href="#HTML代码" class="headerlink" title="HTML代码"></a>HTML代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../images/bright.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">"bright"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"big"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../images/bright.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">"bigImg"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="CSS代码"><a href="#CSS代码" class="headerlink" title="CSS代码"></a>CSS代码</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span> <span class="number">0</span> <span class="number">0</span> <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.bright</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.mask</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#b9e4f5</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">    <span class="comment">/* 透明度 */</span></span><br><span class="line">    <span class="attribute">opacity</span>: .<span class="number">5</span>;</span><br><span class="line">    <span class="attribute">cursor</span>: move;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.big</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">410px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">500px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: pink;</span><br><span class="line">    <span class="comment">/* z-index: 999; */</span></span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.big</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="JS代码"><a href="#JS代码" class="headerlink" title="JS代码"></a>JS代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> box = <span class="built_in">document</span>.querySelector(<span class="string">'.box'</span>);</span><br><span class="line">    <span class="keyword">var</span> mask = <span class="built_in">document</span>.querySelector(<span class="string">'.mask'</span>);</span><br><span class="line">    <span class="keyword">var</span> big = <span class="built_in">document</span>.querySelector(<span class="string">'.big'</span>);</span><br><span class="line">    <span class="comment">// 1.鼠标经过 box 时，显示 mask 和 big ，离开时隐藏</span></span><br><span class="line">    box.addEventListener(<span class="string">'mouseover'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        mask.style.display = <span class="string">'block'</span>;</span><br><span class="line">        big.style.display = <span class="string">'block'</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">    box.addEventListener(<span class="string">'mouseout'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            mask.style.display = <span class="string">'none'</span>;</span><br><span class="line">            big.style.display = <span class="string">'none'</span>;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="comment">// 2.鼠标移动时，让黄色盒子 mask 跟着鼠标走</span></span><br><span class="line">        <span class="comment">// maskX 和 maskY 其实就是mask盒子的位移值</span></span><br><span class="line">    box.addEventListener(<span class="string">'mousemove'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> x = e.pageX - <span class="keyword">this</span>.offsetLeft;</span><br><span class="line">        <span class="keyword">var</span> y = e.pageY - <span class="keyword">this</span>.offsetTop;</span><br><span class="line">        <span class="keyword">var</span> maskX = x - mask.offsetWidth / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">var</span> maskY = y - mask.offsetHeight / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">var</span> maskMaxWidth = box.offsetWidth - mask.offsetWidth;</span><br><span class="line">        <span class="keyword">var</span> maskMaxHeight = box.offsetHeight - mask.offsetHeight;</span><br><span class="line">        <span class="keyword">if</span> (maskX &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            maskX = <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (maskX &gt;= maskMaxWidth) &#123;</span><br><span class="line">            maskX = maskMaxWidth;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (maskY &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            maskY = <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (maskY &gt;= maskMaxHeight) &#123;</span><br><span class="line">            maskY = maskMaxHeight;</span><br><span class="line">        &#125;</span><br><span class="line">        mask.style.left = maskX + <span class="string">'px'</span>;</span><br><span class="line">        mask.style.top = maskY + <span class="string">'px'</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3.大图 big 的移动距离 = mask 的移动距离 * big 的最大移动距离 / mask 的最大移动距离</span></span><br><span class="line">        <span class="keyword">var</span> bigImg = <span class="built_in">document</span>.querySelector(<span class="string">'.bigImg'</span>);</span><br><span class="line">        <span class="keyword">var</span> bigMaxWidth = bigImg.offsetWidth - big.offsetWidth;</span><br><span class="line">        <span class="keyword">var</span> bigMaxHeight = bigImg.offsetHeight - big.offsetHeight;</span><br><span class="line">        <span class="keyword">var</span> bigX = maskX * bigMaxWidth / maskMaxWidth;</span><br><span class="line">        <span class="keyword">var</span> bigY = maskY * bigMaxHeight / maskMaxHeight;</span><br><span class="line">        bigImg.style.left = -bigX + <span class="string">'px'</span>;</span><br><span class="line">        bigImg.style.top = -bigY + <span class="string">'px'</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<p>Author：<font color="red"><strong><em>oCodeHoney</em></strong></font></p>
-<p>Date：<font color="red"><strong><em>2020-3-9</em></strong></font></p>
-<hr>
-
+            <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/03/09/hello-world/" >
+            
+                <span>Hello Honey</span>
+        </a>
+        <div class="abstract-content">
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/09</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
     </article>
-    <!-- license  -->
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/03/09/%E3%80%90BLOG%E3%80%91%E5%9C%A8%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/" title= "【BLOG】在博客中加入本地图片的方法">
-                    <div class="nextTitle">【BLOG】在博客中加入本地图片的方法</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/03/09/%E3%80%90BLOG%E3%80%91%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title= "【BLOG】BLOG的部署与搭建">
-                    <div class="prevTitle">【BLOG】BLOG的部署与搭建</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
     
-    <!-- gitalk评论 -->
-
-    <!-- utteranc评论 -->
-
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
+            
+            <div class="profile">
+    <img class="profile-avatar" alt="avatar" src= /avatar/bright.jpg >
+    <div class="profile-name">oCodeHoney</div>
+    
+    <div class="profile-signature">
+        Hi, stranger.
+    </div>
+    
+    
+    <div class="profile-social">
+        
+    
+        
+            
+                <a href="mailto:1352387756@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/oCodeHoney" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title=qq>
+                  
+                  <img class="profile-qr" src="/assets/qqewm.png" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://space.bilibili.com/11087980" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    
+        <div class="friends">
+            <div>FRIENDS</div>
+            
+                
+            
+                
+            
+                
+            
+        </div>
+    
+    
+        <div class="about-me">
+            <a href = "/about" >ABOUT ME</a>
+        </div>
+    
+</div>
             
         </div>
         <footer class="footer footer-unloaded">
@@ -556,24 +578,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#效果展示"><span class="toc-number">1.</span> <span class="toc-text">效果展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考代码"><span class="toc-number">2.</span> <span class="toc-text">参考代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML代码"><span class="toc-number">2.1.</span> <span class="toc-text">HTML代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS代码"><span class="toc-number">2.2.</span> <span class="toc-text">CSS代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS代码"><span class="toc-number">2.3.</span> <span class="toc-text">JS代码</span></a></li></ol></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -911,8 +915,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
