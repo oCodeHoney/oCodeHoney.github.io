@@ -419,7 +419,7 @@ height:50vh;
 <h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><p><img src="/2020/04/21/%E3%80%90%E8%B6%A3%E5%91%B3%E6%A1%88%E4%BE%8B%E3%80%91%E8%90%A5%E9%94%80%E5%8F%B7%E6%AE%B5%E5%AD%90%E7%94%9F%E6%88%90%E5%99%A8/demo.jpg" alt="预览效果图"></p>
 <h2 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h2><p>案例难度不大，代码思路也非常简洁，设置几个input接受源数据，然后对字符串进行拼接后赋给预设好的div。</p>
 <h2 id="重难点"><a href="#重难点" class="headerlink" title="重难点"></a>重难点</h2><h3 id="placeholder属性的修改"><a href="#placeholder属性的修改" class="headerlink" title="placeholder属性的修改"></a>placeholder属性的修改</h3><p>placeholder 属性字体颜色和字体大小的修改，这是css3的新增属性，修改方法之前没有学过，比较麻烦，以下以input为例</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span><br><span class="line">  <span class="comment">/* WebKit browsers */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#95a5a6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-moz-placeholder</span> &#123;</span><br><span class="line">  <span class="comment">/* Mozilla Firefox 4 to 18 */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#95a5a6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-moz-placeholder</span> &#123;</span><br><span class="line">  <span class="comment">/* Mozilla Firefox 19+ */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#95a5a6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-ms-input-placeholder</span> &#123;</span><br><span class="line">  <span class="comment">/* Internet Explorer 10+ */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#95a5a6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span><br><span class="line">  <span class="comment">/* WebKit browsers */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#95a5a6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-moz-placeholder</span> &#123;</span><br><span class="line">  <span class="comment">/* Mozilla Firefox 4 to 18 */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#95a5a6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-moz-placeholder</span> &#123;</span><br><span class="line">  <span class="comment">/* Mozilla Firefox 19+ */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#95a5a6</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-ms-input-placeholder</span> &#123;</span><br><span class="line">  <span class="comment">/* Internet Explorer 10+ */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#95a5a6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="button和input等标签选中后取消蓝色外边框"><a href="#button和input等标签选中后取消蓝色外边框" class="headerlink" title="button和input等标签选中后取消蓝色外边框"></a>button和input等标签选中后取消蓝色外边框</h3><p>这个之前有学过，因为时间太长有点记不清了，实现方法为 <code>outline: none;</code></p>
 <h3 id="CSS实现选中改变属性的伪类选择器：active"><a href="#CSS实现选中改变属性的伪类选择器：active" class="headerlink" title="CSS实现选中改变属性的伪类选择器：active"></a>CSS实现选中改变属性的伪类选择器：active</h3><p>在css中实现选中后的css属性变化，使用的是active伪类选择器</p>
@@ -436,11 +436,6 @@ height:50vh;
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/04/22/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" title= "【算法】HDOJ2065">
-                    <div class="nextTitle">【算法】HDOJ2065</div>
-                </a>
             
         </li>
         <li class="previous">
@@ -726,22 +721,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 14
+        Total : 13
         </div>
         <!-- search  -->
         
@@ -772,11 +754,6 @@ top:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/22</span><a class="archive-post-title" href= "/2020/04/22/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" >【算法】HDOJ2065</a>
-        </li>
     
     
         <li class="archive-post-item">
