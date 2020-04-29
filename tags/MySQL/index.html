@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>【ECharts】初次尝试可视化数据界面 · oCodeHoney</title>
+    <title>oCodeHoney</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -218,23 +218,12 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/" >oCodeHoney&#39;s BLOG</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">【ECharts】初次尝试可视化数据界面</a>
-            </div>
-    </div>
     
     <a class="home-link" href=/>oCodeHoney's BLOG</a>
 </header>
@@ -246,80 +235,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            【ECharts】初次尝试可视化数据界面
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class= post-intro-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "HTML">HTML</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CSS">CSS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ECharts">ECharts</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">257</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/04/28</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -420,81 +353,39 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <p>之前看到过有人做疫情地图的可视化界面，有点心动，然后又想起以前在军事剧里面总是看到的炫酷的数据界面，于是今天参考pink老师的教程做了一个无敌中二的可视化界面，主要目的一方面学习一下数据可视化的东西，一方面继续练习三件套。</p>
-<a id="more"></a>
-
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
-<li><a href="https://github.com/oCodeHoney/html-css/tree/master/demo02" target="_blank" rel="noopener">源码</a></li>
-<li><a href="https://www.echartsjs.com/zh/index.html" target="_blank" rel="noopener">ECharts官网</a></li>
-</ul>
-<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><ul>
-<li><a href="https://ocodehoney.github.io/html-css/demo02/index.html">预览</a> </li>
-</ul>
-<h2 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h2><h3 id="1-用HTML和CSS搭好整体结构"><a href="#1-用HTML和CSS搭好整体结构" class="headerlink" title="1. 用HTML和CSS搭好整体结构"></a>1. 用HTML和CSS搭好整体结构</h3><p>首先写好整体框架，预留好charts的div盒子后面直接把图表往里面放就好。</p>
-<h3 id="2-引入ECharts图表"><a href="#2-引入ECharts图表" class="headerlink" title="2. 引入ECharts图表"></a>2. 引入ECharts图表</h3><p>去官网找合适的类似需求的图表，引入到自己的html页面中，然后对options配置根据需要进行修改。</p>
-<p>这个小项目没有什么难点，所有API官网写的很清楚易懂，图表的引入和配置的修改也非常简单，重点还是在第一步框架的搭建。</p>
-<hr>
-<p>Author：<font color="red"><strong><em>oCodeHoney</em></strong></font></p>
-<p>Date：<font color="red"><strong><em>2020-4-28</em></strong></font></p>
-<hr>
-
+            <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/04/30/%E3%80%90MySQL%E3%80%91%E5%AE%89%E8%A3%85%E6%97%B63306%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" >
+            
+                <span>【MySQL】安装时3306端口被占用的解决方法</span>
+        </a>
+        <div class="abstract-content">
+            <p>一直都对数据库很感兴趣，只是一直抽不出时间下手，今天终于忍不住牺牲点睡觉时间开始了，之前就听说过这东西安装有多麻烦，今天算是见识到了，不过我运气还不错，两次就成功，只是在第一次安装的时候碰到了一个小问题，这里记录一下。</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/30</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "MySQL">MySQL</a>
+    
+</div>
+            
+        </div>
     </article>
-    <!-- license  -->
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/04/30/%E3%80%90MySQL%E3%80%91%E5%AE%89%E8%A3%85%E6%97%B63306%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title= "【MySQL】安装时3306端口被占用的解决方法">
-                    <div class="nextTitle">【MySQL】安装时3306端口被占用的解决方法</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/04/28/%E3%80%90Vue%E3%80%91supermall%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/" title= "【Vue】supermall电商网站移动端项目总结">
-                    <div class="prevTitle">【Vue】supermall电商网站移动端项目总结</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-    <div id="lv-container" data-id="city" data-uid= MTAyMC80OTg2OC8yNjM1OQ==>
-        <script type="text/javascript">
-            (function (d, s) {
-                var j, e = d.getElementsByTagName(s)[0];
-                if (typeof LivereTower === 'function') { return; }
-                j = d.createElement(s);
-                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                j.async = true;
-
-                e.parentNode.insertBefore(j, e);
-            })(document, 'script');
-        </script>
-        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
-
-<!-- City版安装代码已完成 -->
     
-    
-    <!-- gitalk评论 -->
-
-    <!-- utteranc评论 -->
-
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -583,24 +474,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#资源"><span class="toc-number">1.</span> <span class="toc-text">资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预览"><span class="toc-number">2.</span> <span class="toc-text">预览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整体思路"><span class="toc-number">3.</span> <span class="toc-text">整体思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-用HTML和CSS搭好整体结构"><span class="toc-number">3.1.</span> <span class="toc-text">1. 用HTML和CSS搭好整体结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-引入ECharts图表"><span class="toc-number">3.2.</span> <span class="toc-text">2. 引入ECharts图表</span></a></li></ol></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1055,8 +928,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

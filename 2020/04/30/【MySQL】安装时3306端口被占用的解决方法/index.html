@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>【ECharts】初次尝试可视化数据界面 · oCodeHoney</title>
+    <title>【MySQL】安装时3306端口被占用的解决方法 · oCodeHoney</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -232,7 +232,7 @@
                 <a href="/" >oCodeHoney&#39;s BLOG</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">【ECharts】初次尝试可视化数据界面</a>
+                <a href="#" class="post-name">【MySQL】安装时3306端口被占用的解决方法</a>
             </div>
     </div>
     
@@ -262,7 +262,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            【ECharts】初次尝试可视化数据界面
+            【MySQL】安装时3306端口被占用的解决方法
             <!-- 404 -->
             
         </h1>
@@ -281,24 +281,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "HTML">HTML</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CSS">CSS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ECharts">ECharts</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "MySQL">MySQL</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">257</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">322</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/04/28</span>
+                    <span class="post-intro-time">2020/04/30</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -422,22 +416,20 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>之前看到过有人做疫情地图的可视化界面，有点心动，然后又想起以前在军事剧里面总是看到的炫酷的数据界面，于是今天参考pink老师的教程做了一个无敌中二的可视化界面，主要目的一方面学习一下数据可视化的东西，一方面继续练习三件套。</p>
+        <p>一直都对数据库很感兴趣，只是一直抽不出时间下手，今天终于忍不住牺牲点睡觉时间开始了，之前就听说过这东西安装有多麻烦，今天算是见识到了，不过我运气还不错，两次就成功，只是在第一次安装的时候碰到了一个小问题，这里记录一下。</p>
 <a id="more"></a>
 
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
-<li><a href="https://github.com/oCodeHoney/html-css/tree/master/demo02" target="_blank" rel="noopener">源码</a></li>
-<li><a href="https://www.echartsjs.com/zh/index.html" target="_blank" rel="noopener">ECharts官网</a></li>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.cnblogs.com/lyugeyi1030/p/8036587.html" target="_blank" rel="noopener">安装MySQL时提示3306端口已被占用的解决方案</a></li>
 </ul>
-<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><ul>
-<li><a href="https://ocodehoney.github.io/html-css/demo02/index.html">预览</a> </li>
-</ul>
-<h2 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h2><h3 id="1-用HTML和CSS搭好整体结构"><a href="#1-用HTML和CSS搭好整体结构" class="headerlink" title="1. 用HTML和CSS搭好整体结构"></a>1. 用HTML和CSS搭好整体结构</h3><p>首先写好整体框架，预留好charts的div盒子后面直接把图表往里面放就好。</p>
-<h3 id="2-引入ECharts图表"><a href="#2-引入ECharts图表" class="headerlink" title="2. 引入ECharts图表"></a>2. 引入ECharts图表</h3><p>去官网找合适的类似需求的图表，引入到自己的html页面中，然后对options配置根据需要进行修改。</p>
-<p>这个小项目没有什么难点，所有API官网写的很清楚易懂，图表的引入和配置的修改也非常简单，重点还是在第一步框架的搭建。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在安装时设置端口号这一步默认设置的是3306端口，这时点下一步可能会跳出来一个弹窗显示3306端口已被占用，如果不想修改默认端口的话就要把这个端口正在运行的程序关闭。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="1-首先用cmd查看端口号被什么程序占用了"><a href="#1-首先用cmd查看端口号被什么程序占用了" class="headerlink" title="1. 首先用cmd查看端口号被什么程序占用了"></a>1. 首先用cmd查看端口号被什么程序占用了</h3><p>使用命令查看端口 <code>netstat  -aon|findstr 3306</code></p>
+<p>可以看到占用端口的程序的pid（最后一个数字）</p>
+<p>然后输入 <code>tasklist</code> 查看所有进程，根据刚刚获得的pid号找到占用的进程。</p>
+<h3 id="2-关闭进程"><a href="#2-关闭进程" class="headerlink" title="2. 关闭进程"></a>2. 关闭进程</h3><p>进入任务管理器，找到该进程关闭，返回到配置页面点击next发现没有再出现弹窗了。</p>
 <hr>
 <p>Author：<font color="red"><strong><em>oCodeHoney</em></strong></font></p>
-<p>Date：<font color="red"><strong><em>2020-4-28</em></strong></font></p>
+<p>Date：<font color="red"><strong><em>2020-4-30</em></strong></font></p>
 <hr>
 
     </article>
@@ -447,17 +439,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/04/30/%E3%80%90MySQL%E3%80%91%E5%AE%89%E8%A3%85%E6%97%B63306%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title= "【MySQL】安装时3306端口被占用的解决方法">
-                    <div class="nextTitle">【MySQL】安装时3306端口被占用的解决方法</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/04/28/%E3%80%90Vue%E3%80%91supermall%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/" title= "【Vue】supermall电商网站移动端项目总结">
-                    <div class="prevTitle">【Vue】supermall电商网站移动端项目总结</div>
+                <a href= "/2020/04/28/%E3%80%90ECharts%E3%80%91%E5%88%9D%E6%AC%A1%E5%B0%9D%E8%AF%95%E5%8F%AF%E8%A7%86%E5%8C%96%E6%95%B0%E6%8D%AE%E7%95%8C%E9%9D%A2/" title= "【ECharts】初次尝试可视化数据界面">
+                    <div class="prevTitle">【ECharts】初次尝试可视化数据界面</div>
                 </a>
             
         </li>
@@ -599,7 +586,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#资源"><span class="toc-number">1.</span> <span class="toc-text">资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预览"><span class="toc-number">2.</span> <span class="toc-text">预览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#整体思路"><span class="toc-number">3.</span> <span class="toc-text">整体思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-用HTML和CSS搭好整体结构"><span class="toc-number">3.1.</span> <span class="toc-text">1. 用HTML和CSS搭好整体结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-引入ECharts图表"><span class="toc-number">3.2.</span> <span class="toc-text">2. 引入ECharts图表</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">2.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">3.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-首先用cmd查看端口号被什么程序占用了"><span class="toc-number">3.1.</span> <span class="toc-text">1. 首先用cmd查看端口号被什么程序占用了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-关闭进程"><span class="toc-number">3.2.</span> <span class="toc-text">2. 关闭进程</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
