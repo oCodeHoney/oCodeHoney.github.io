@@ -422,7 +422,7 @@ height:50vh;
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="http://www.mamicode.com/info-detail-2928968.html" target="_blank" rel="noopener">Vue-Cli4.x配置文件路径别名</a></li>
 </ul>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="创建配置文件"><a href="#创建配置文件" class="headerlink" title="创建配置文件"></a>创建配置文件</h3><p>在根目录下新建Vue.config.js文件</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="创建配置文件"><a href="#创建配置文件" class="headerlink" title="创建配置文件"></a>创建配置文件</h3><p>在根目录下新建vue.config.js文件</p>
 <h3 id="设置别名"><a href="#设置别名" class="headerlink" title="设置别名"></a>设置别名</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);<span class="comment">//引入path模块</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolve</span>(<span class="params">dir</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> path.join(__dirname,dir)<span class="comment">//path.join(__dirname)设置绝对路径</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports=&#123;</span><br><span class="line">    chainWebpack:<span class="function">(<span class="params">config</span>)=&gt;</span>&#123;</span><br><span class="line">        config.resolve.alias</span><br><span class="line">        .set(<span class="string">'@'</span>,resolve(<span class="string">'./src'</span>))</span><br><span class="line">        .set(<span class="string">'components'</span>,resolve(<span class="string">'./src/components'</span>))</span><br><span class="line">        .set(<span class="string">'views'</span>,resolve(<span class="string">'src/views'</span>))</span><br><span class="line">        .set(<span class="string">'assets'</span>,resolve(<span class="string">'src/assets'</span>))</span><br><span class="line">        <span class="comment">//set第一个参数：设置的别名，第二个参数：设置的路径</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -809,9 +809,24 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 18
+        Total : 19
         </div>
         <!-- search  -->
         
@@ -828,6 +843,11 @@ top:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2020/05/22/%E3%80%90Vue%E3%80%91CLI4%E4%BD%BF%E7%94%A8less%E7%9A%84%E6%96%B9%E6%B3%95/" >【Vue】CLI4使用less的方法</a>
+        </li>
     
     
         <li class="archive-post-item">

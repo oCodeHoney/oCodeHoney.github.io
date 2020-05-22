@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>【BLOG】自定义首页文章摘要的方法 · oCodeHoney</title>
+    <title>【Vue】CLI4使用less的方法 · oCodeHoney</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -232,7 +232,7 @@
                 <a href="/" >oCodeHoney&#39;s BLOG</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">【BLOG】自定义首页文章摘要的方法</a>
+                <a href="#" class="post-name">【Vue】CLI4使用less的方法</a>
             </div>
     </div>
     
@@ -262,7 +262,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            【BLOG】自定义首页文章摘要的方法
+            【Vue】CLI4使用less的方法
             <!-- 404 -->
             
         </h1>
@@ -281,18 +281,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "BLOG">BLOG</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Vue">Vue</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">116</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">86</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/03/10</span>
+                    <span class="post-intro-time">2020/05/22</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -416,14 +416,17 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>突然发现首页的博文摘要是直接截取一大段，内容太长有没有重点，很影响观感和阅读体验，所以学习了自定义博客首页文章摘要的方法。</p>
+        <p>今天做b站移动端项目时候需要用less，因此去学习了一下在CLI4中使用less的方法。</p>
 <a id="more"></a>
 
-<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><p>方法较简单，在首页显示的摘要内容和正文内容之间输入如下内容</p>
-<pre><code>&lt;!--more--&gt;</code></pre><p>需独立一行键入，即可实现自定义摘要内容。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.jianshu.com/p/b2ceba3772f1" target="_blank" rel="noopener">【css】vue使用less,scss</a></li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="安装less-loader"><a href="#安装less-loader" class="headerlink" title="安装less-loader"></a>安装less-loader</h3><p>安装命令 <code>npm install less less-loader --save-dev</code></p>
+<p>安装完以后就可以在style标签中使用 <code>lang=&quot;less&quot;</code> 来使用了。</p>
 <hr>
 <p>Author：<font color="red"><strong><em>oCodeHoney</em></strong></font></p>
-<p>Date：<font color="red"><strong><em>2020-3-10</em></strong></font></p>
+<p>Date：<font color="red"><strong><em>2020-5-22</em></strong></font></p>
 <hr>
 
     </article>
@@ -433,17 +436,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/03/10/%E3%80%90BLOG%E3%80%91%E5%8D%9A%E5%AE%A2%E6%90%9C%E7%B4%A2%E6%A1%86%E7%9A%84%E6%90%AD%E5%BB%BA/" title= "【BLOG】HEXO+archer站内搜索的启用方法">
-                    <div class="nextTitle">【BLOG】HEXO+archer站内搜索的启用方法</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/03/09/%E3%80%90BLOG%E3%80%91%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title= "【BLOG】BLOG的部署与搭建">
-                    <div class="prevTitle">【BLOG】BLOG的部署与搭建</div>
+                <a href= "/2020/04/30/%E3%80%90MySQL%E3%80%91%E5%AE%89%E8%A3%85%E6%97%B63306%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" title= "【MySQL】安装时3306端口被占用的解决方法">
+                    <div class="prevTitle">【MySQL】安装时3306端口被占用的解决方法</div>
                 </a>
             
         </li>
@@ -581,7 +579,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实现方法"><span class="toc-number">1.</span> <span class="toc-text">实现方法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">2.</span> <span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装less-loader"><span class="toc-number">2.1.</span> <span class="toc-text">安装less-loader</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
