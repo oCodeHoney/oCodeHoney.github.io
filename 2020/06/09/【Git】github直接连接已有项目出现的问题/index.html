@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>oCodeHoney</title>
+    <title>【Git】github直接连接已有项目出现的问题 · oCodeHoney</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -218,12 +218,23 @@
 <meta name="generator" content="Hexo 4.2.0"></head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >oCodeHoney&#39;s BLOG</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">【Git】github直接连接已有项目出现的问题</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>oCodeHoney's BLOG</a>
 </header>
@@ -235,24 +246,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            【Git】github直接连接已有项目出现的问题
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Git">Git</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">301</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/06/09</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -353,304 +414,80 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/24/%E3%80%90%E6%9D%82%E8%B0%88%E3%80%91PowerShell%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" >
-            
-                <span>【杂谈】PowerShell禁止运行脚本的解决方法</span>
-        </a>
-        <div class="abstract-content">
-            <p>最近毕业论文加前端学习有些忙，没有时间写博文，今天开始学node.js在使用第三方模块时候遇到了一个小问题，简单记录一下。问题就是在执行 <code>nodemon xxx.js</code> 这个命令的时候出现了在此系统上禁止运行脚本的红色提示。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "PowerShell">PowerShell</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>以前在连接远程仓库的时候都是是先clone一个本地新仓库再把文件复制过去，这次感觉太麻烦，想把创建完的项目直接连接到仓库，然后就error了。</p>
+<a id="more"></a>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.jianshu.com/p/3380ec281729" target="_blank" rel="noopener">fatal: remote origin already exists.解决方法</a></li>
+<li><a href="https://blog.csdn.net/henusyb/article/details/89385386" target="_blank" rel="noopener">解决办法：error: failed to push some refs to ‘https://github.com/xxxx.git’</a></li>
+</ul>
+<h2 id="错误代码"><a href="#错误代码" class="headerlink" title="错误代码"></a>错误代码</h2><p><code>error: failed to push some refs to &#39;https://github.com/xxxxxx.git&#39;</code></p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>因为在那之前我进行了多次尝试，所以可能会报这个错<code>fatal: remote origin already exists.</code><br>所以首先需要断开之前的连接：</p>
+<p><code>git remote rm origin</code></p>
+<p>然后连接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;xxxxxx.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>这个时候就会报前面说的错误了 <code>error: failed to push some refs to &#39;https://github.com/xxxxxx.git&#39;</code></p>
+<p>一开始我先尝试 <code>git pull origin master</code> 了一次再push还是报错，错误原因我自己分析了一下还是因为文件冲突了，但是为什么pull了没用还是暂时没有想清楚，所以没办法只能强制push：</p>
+<p><code>git push -u origin master -f</code></p>
+<p>这样就没有报错了，然后依次add，commit，push就成功了。</p>
+<hr>
+<p>Author：<font color="red"><strong><em>oCodeHoney</em></strong></font></p>
+<p>Date：<font color="red"><strong><em>2020-6-9</em></strong></font></p>
+<hr>
+
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/10/%E3%80%90BLOG%E3%80%91HEXO%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE/" >
-            
-                <span>【BLOG】HEXO实现代码高亮的方法</span>
-        </a>
-        <div class="abstract-content">
-            <p>以前只是听到过代码高亮这个概念但不了解，昨晚终于完全理解，但可能永远不想再看见highlight这个单词了，这东西坑真的太多了，凌晨调到一点多才调试完成。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "BLOG">BLOG</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/10/%E3%80%90JS%E3%80%91%E4%BB%BF%E6%B7%98%E5%AE%9D%E5%9B%BA%E5%AE%9A%E4%BE%A7%E8%BE%B9%E6%A0%8F%E6%95%88%E6%9E%9C%E7%9A%84%E5%AE%9E%E7%8E%B0/" >
-            
-                <span>【JS】仿淘宝固定侧边栏效果的实现</span>
-        </a>
-        <div class="abstract-content">
-            <p>本案例难度不大，实用性较强。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/10/%E3%80%90BLOG%E3%80%91%E4%BB%A3%E7%A0%81%E6%A1%86%E5%86%85%E6%98%BE%E7%A4%BA%E5%8F%8D%E5%BC%95%E5%8F%B7/" >
-            
-                <span>【BLOG】代码框内显示反引号的方法</span>
-        </a>
-        <div class="abstract-content">
-            <p>因为在md语法中，反引号是用来标识代码行和代码块的，所以如果想在代码块中显示反引号就必然会出现一些问题。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "BLOG">BLOG</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/10/%E3%80%90BLOG%E3%80%91%E4%BB%A3%E7%A0%81%E5%9D%97%E5%86%85%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E8%B0%83%E6%95%B4/" >
-            
-                <span>【BLOG】代码块内代码格式调整的笨办法</span>
-        </a>
-        <div class="abstract-content">
-            <p>今天突然发现写博文时，博文内的代码块格式有点乱，大概思考了一下应该是因为复制前的代码本身没有对齐的原因，在md编辑器内调整有点麻烦，于是想出了一个方便但是有点笨的办法（主要针对HTML，CSS内部样式表和嵌入的Javascript代码，因为其他语言一般不会有类似问题应该）。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "BLOG">BLOG</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/10/%E3%80%90BLOG%E3%80%91%E5%8D%9A%E5%AE%A2%E6%90%9C%E7%B4%A2%E6%A1%86%E7%9A%84%E6%90%AD%E5%BB%BA/" >
-            
-                <span>【BLOG】HEXO+archer站内搜索的启用方法</span>
-        </a>
-        <div class="abstract-content">
-            <p>今天感觉应该还是要做一下站内搜索，这样以后要查阅相关博文会更方便，结果一搞就是一个下午，其实解决起来也就是几分钟，但是找这个解决方法找了三个小时，心累啊。因为我用的是archer主题，所以还是基于这个主题来写。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "BLOG">BLOG</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/10/%E3%80%90BLOG%E3%80%91%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A6%96%E9%A1%B5%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81/" >
-            
-                <span>【BLOG】自定义首页文章摘要的方法</span>
-        </a>
-        <div class="abstract-content">
-            <p>突然发现首页的博文摘要是直接截取一大段，内容太长有没有重点，很影响观感和阅读体验，所以学习了自定义博客首页文章摘要的方法。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "BLOG">BLOG</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/09/%E3%80%90BLOG%E3%80%91%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" >
-            
-                <span>【BLOG】BLOG的部署与搭建</span>
-        </a>
-        <div class="abstract-content">
-            <p>今天完成了个人博客 <strong><em>oCodeHoney</em></strong> 的搭建，使用的是github托管和hexo框架，之前折腾了很久用云服务器和html+css自己写，但是知识储备不够，所以一直没有成型。今天也折腾了半个下午才算是正式部署完毕，中间也经历了一些波折，这里记录一下详细的教程。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "BLOG">BLOG</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/09/%E3%80%90BLOG%E3%80%91%E5%9C%A8%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E7%9A%84%E6%96%B9%E6%B3%95/" >
-            
-                <span>【BLOG】在博客中加入本地图片的方法</span>
-        </a>
-        <div class="abstract-content">
-            <p>刚刚写一篇博文时尝试将本地的图片以平时写HTML和CSS时同样的相对路径法插入，结果无法显示，原来还需要一些操作。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "BLOG">BLOG</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/09/%E3%80%90JS%E3%80%91%E4%BB%BF%E4%BA%AC%E4%B8%9C%E6%94%BE%E5%A4%A7%E9%95%9C%E6%95%88%E6%9E%9C%E7%9A%84%E5%AE%9E%E7%8E%B0/" >
-            
-                <span>【JS】仿京东放大镜效果的实现</span>
-        </a>
-        <div class="abstract-content">
-            <p>这是JS学习到目前为止做的比较难的一个案例，主要的难点在于鼠标的偏移量与放大镜遮罩层的偏移量以及放大图的偏移量的换算。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/06/08/%E3%80%90Vue%E3%80%91%E5%9C%A8%E6%90%AD%E5%BB%BA%E7%AE%80%E6%98%93%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%87%BA%E7%8E%B0%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98/" title= "【Vue】在搭建简易博客时出现跨域问题">
+                    <div class="prevTitle">【Vue】在搭建简易博客时出现跨域问题</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC80OTg2OC8yNjM1OQ==>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/2020/03/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/03/page/2/">NEXT &gt;</a>
-    </nav>
     
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -735,6 +572,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误代码"><span class="toc-number">2.</span> <span class="toc-text">错误代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">3.</span> <span class="toc-text">解决方案</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1297,6 +1152,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
